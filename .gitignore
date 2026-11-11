@@ -1,0 +1,21 @@
+# ── 构建产物 ──
+bin/
+obj/
+dist/
+*.user
+*.suo
+
+# ── 运行时数据（工具自己生成，不入库）──
+picselect.data/
+
+# ── 生成物 ──
+testdata/
+tools/GenIcon/preview/
+
+# ── 系统 ──
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# ── 本地工作区元数据 ──
+.workbuddy-ai/

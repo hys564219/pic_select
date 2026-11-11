@@ -1,0 +1,146 @@
+PicSelect — local image picker
+==============================
+
+An offline tool for going through a folder of images, keeping the good ones,
+and throwing the rest away. Single exe, fully portable, no network access.
+
+
+【What it's for】
+
+Cleaning up image packs downloaded from the web. One folder at a time:
+mark the images worth keeping, then after one pass move everything unmarked
+to the Recycle Bin.
+
+Built for the "a thousand photos, pick the ten usable ones" kind of job.
+
+
+【Requirements】
+
+Windows 10 / 11, 64-bit. No .NET, Python or any runtime needed —
+just double-click the exe.
+
+First launch takes 2-5 seconds (the single-file bundle unpacks to a temp
+folder first). After that it's fast.
+
+
+【Quick start】
+
+1. Double-click PicSelect.exe
+2. Click "Open folder" at the top left, or drag a folder into the window
+3. Go through the images one by one, deciding with the buttons on the right
+4. When you're done, click "Delete unmarked" at the top right
+
+
+【Buttons on the right, top to bottom】
+
+  Keep          Mark this one to keep, go to the next
+  Skip          Leave unmarked, go to the next
+                (red: skipping means it will be deleted)
+  Previous      Go back one image
+  Mark          Toggle the mark only, the image stays put
+  ─────────────────────
+  Prev marked   Jump to the nearest marked image before this one
+                If there is none, jump to the first image
+  Next marked   Jump to the nearest marked image after this one
+                If there is none, jump to the last processed image
+  ─────────────────────
+  Undo          Undo the last step
+
+When the current image is marked, a yellow "✓ Kept" badge appears at the
+bottom of the button column.
+
+
+【Language】
+
+The dropdown on the right side of the toolbar switches between English / 中文 / 日本語.
+The whole UI and all dialogs follow. Your choice is remembered for next time.
+
+
+【Keyboard】
+
+  Space / K     Keep and go next
+  D / →         Skip and go next
+  A / ←         Previous image
+  S             Toggle mark (stays on this image)
+  [ / ]         Previous / next marked image
+  Ctrl+← / →    Same as above
+  Ctrl+Z        Undo last step
+  Ctrl+G        Go to image (number or file name fragment)
+  Ctrl+O        Open folder
+  Ctrl+Delete   Delete all unmarked images
+  Home / End    First / last image
+
+  Wheel         Zoom around the cursor
+  Drag          Pan
+  Double-click  Fit window ↔ 100%
+  Enter / F     Same as double-click
+  0             100%
+
+
+【Go to】
+
+Ctrl+G accepts three kinds of input:
+  37            Go to image 37
+  IMG_2045      Go to the first file whose name contains IMG_2045
+  *2045*        Wildcard match, same as above
+
+
+【About deleting】
+
+· Deletes every image that is NOT marked to keep
+· Files go to the Recycle Bin, not permanently deleted — you can restore them
+· A confirmation dialog shows the exact count first
+· Consider clicking "Export kept list" first as a second safety net
+· Files locked by another program are listed separately and don't block the rest
+
+
+【Closing and resuming】
+
+· Progress (which images are marked, which one you're on) is saved on every move
+· Next launch asks whether to resume
+· "Restart" clears this round's marks so you can start over
+
+
+【Where data lives】
+
+Everything is inside the picselect.data folder next to the exe:
+
+  picselect.data/session.json     current progress (deleted after a finished run)
+  picselect.data/settings.json    language and other settings
+  picselect.data/kept_*.txt       lists you exported manually
+
+· To wipe every trace, just delete the picselect.data folder
+· No registry writes, no AppData, no network
+· To move to another machine, copy the exe
+
+
+【Supported image formats】
+
+JPG / JPEG / PNG / BMP / GIF / TIFF / TIF / ICO / WebP
+
+· WebP depends on the system WIC codec; generally available on Windows 10 1903+
+· HEIC / HEIF requires the "HEIF Image Extensions" package from the Store
+· Camera RAW formats are not supported
+
+
+【Why paging doesn't stutter】
+
+The tool decodes the next 10 and previous 3 images in the background, so
+moving forward hits a warm memory cache instead of decoding from disk.
+Memory use is capped, so it never grows without bound.
+
+Full-resolution decoding happens only when you zoom in, and it swaps in
+silently in the background.
+
+
+【On low-end laptops】
+
+· The window shrinks to fit the screen work area, so it never hides under the taskbar
+· Decoder thread count follows the CPU core count; dual-core machines only get 2
+  threads so the UI stays responsive
+· The memory cache is sized by physical RAM: 220 MB under 5 GB, 320 MB under 9 GB,
+  420 MB above that
+· When zooming, images larger than 4096 px are decoded at 4096 on the long edge —
+  visually identical on a 1080p/2K screen, far lighter on memory
+· On dual-GPU laptops, keep the default GPU. Forcing the discrete GPU in the
+  driver panel tends to be less stable for this kind of tool
