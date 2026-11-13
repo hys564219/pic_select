@@ -239,7 +239,7 @@
                     <Button Style="{StaticResource ActionButton}" Click="OnSkip"
                             Background="#3A1E1C" BorderBrush="#6B302C">
                         <StackPanel>
-                            <TextBlock x:Name="TxtSkipTitle" Text="Skip" FontSize="15"
+                            <TextBlock x:Name="TxtSkipTitle" Text="Next" FontSize="15"
                                        HorizontalAlignment="Center" Foreground="#E8A9A3" />
                             <TextBlock x:Name="TxtSkipHint" Text="D / →" FontSize="11"
                                        HorizontalAlignment="Center" Foreground="#B87C76" Margin="0,3,0,0" />

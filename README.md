@@ -13,7 +13,7 @@ English · [简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 You download a pack of a thousand images and only ten of them are usable. Instead of clicking through a photo viewer and deleting files by hand, you go through the folder once:
 
 - **Keep** marks the image and advances
-- **Skip** advances without marking
+- **Next** advances without marking
 - **Mark** toggles the mark without moving
 - When you're done, **Delete unmarked** moves everything unmarked to the Recycle Bin in one go
 
@@ -63,7 +63,7 @@ The result is `dist/PicSelect.exe` — about 64 MB, self-contained.
 | Key | Action |
 |---|---|
 | `Space` / `K` | Keep and go next |
-| `D` / `→` | Skip and go next |
+| `D` / `→` | Next without marking |
 | `A` / `←` | Previous image |
 | `S` | Toggle mark (stays on this image) |
 | `[` / `]` | Previous / next marked image |

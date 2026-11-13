@@ -59,7 +59,7 @@ public static class Loc
             ["top.delete"] = "Delete unmarked",
 
             ["btn.keep"] = "Keep",
-            ["btn.skip"] = "Skip",
+            ["btn.skip"] = "Next",
             ["btn.prev"] = "Previous",
             ["btn.mark"] = "Mark",
             ["btn.unmark"] = "Unmark",
@@ -130,7 +130,7 @@ public static class Loc
             ["help.title"] = "Shortcuts",
             ["help.body"] =
                 "Space / K     Keep and go next\n" +
-                "D / →         Skip and go next\n" +
+                "D / →         Next without marking\n" +
                 "A / ←         Previous image\n" +
                 "S             Toggle mark (stays on this image)\n" +
                 "[ / ]         Previous / next marked image\n" +
@@ -161,7 +161,7 @@ public static class Loc
             ["top.delete"] = "删除未标记",
 
             ["btn.keep"] = "保留",
-            ["btn.skip"] = "跳过",
+            ["btn.skip"] = "下一张",
             ["btn.prev"] = "上一张",
             ["btn.mark"] = "标记保留",
             ["btn.unmark"] = "取消标记",
@@ -232,7 +232,7 @@ public static class Loc
             ["help.title"] = "快捷键",
             ["help.body"] =
                 "空格 / K     保留并进入下一张\n" +
-                "D / →        跳过，进入下一张\n" +
+                "D / →        下一张（不标记）\n" +
                 "A / ←        上一张\n" +
                 "S            标记 / 取消标记（不移动）\n" +
                 "[ / ]        上一个 / 下一个已标记的图片\n" +
@@ -263,7 +263,7 @@ public static class Loc
             ["top.delete"] = "未選択を削除",
 
             ["btn.keep"] = "残す",
-            ["btn.skip"] = "飛ばす",
+            ["btn.skip"] = "次へ",
             ["btn.prev"] = "前へ",
             ["btn.mark"] = "残す印",
             ["btn.unmark"] = "印を消す",
@@ -334,7 +334,7 @@ public static class Loc
             ["help.title"] = "ショートカット",
             ["help.body"] =
                 "スペース / K   残して次へ\n" +
-                "D / →          飛ばして次へ\n" +
+                "D / →          印を付けずに次へ\n" +
                 "A / ←          前の画像\n" +
                 "S              印を付ける / 外す（移動しない）\n" +
                 "[ / ]          前 / 次の印へ\n" +

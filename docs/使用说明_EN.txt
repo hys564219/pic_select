@@ -34,7 +34,7 @@ folder first). After that it's fast.
 【Buttons on the right, top to bottom】
 
   Keep          Mark this one to keep, go to the next
-  Skip          Leave unmarked, go to the next
+  Next          Leave unmarked, go to the next
                 (red: skipping means it will be deleted)
   Previous      Go back one image
   Mark          Toggle the mark only, the image stays put
@@ -59,7 +59,7 @@ The whole UI and all dialogs follow. Your choice is remembered for next time.
 【Keyboard】
 
   Space / K     Keep and go next
-  D / →         Skip and go next
+  D / →         Next without marking
   A / ←         Previous image
   S             Toggle mark (stays on this image)
   [ / ]         Previous / next marked image
